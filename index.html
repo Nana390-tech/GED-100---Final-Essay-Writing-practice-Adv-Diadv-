@@ -63,8 +63,6 @@
         .topic-card.selected { border-color: #7c3aed; background: #f5f3ff; }
         .topic-card .emoji { font-size: 2.2rem; margin-bottom: 10px; display: block; }
         .topic-card .title { font-weight: 700; color: #1f2937; font-size: 0.95rem; }
-
-        /* Color accents for cards */
         .topic-card:nth-child(1) { border-top: 4px solid #ef4444; }
         .topic-card:nth-child(2) { border-top: 4px solid #f59e0b; }
         .topic-card:nth-child(3) { border-top: 4px solid #3b82f6; }
@@ -81,21 +79,10 @@
             padding: 30px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.15);
             margin-bottom: 24px;
-            display: none;
         }
-        .writing-panel.active { display: block; }
-        .writing-panel h2 {
-            font-size: 1.4rem;
-            color: #1f2937;
-            margin-bottom: 6px;
-        }
-        .writing-panel .topic-label {
-            color: #7c3aed;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 16px;
-        }
-        .writing-panel .instructions {
+        .writing-panel h2 { font-size: 1.4rem; color: #1f2937; margin-bottom: 6px; }
+        .topic-label { color: #7c3aed; font-weight: 600; font-size: 1rem; margin-bottom: 16px; }
+        .instructions {
             background: #fef3c7;
             border-left: 4px solid #f59e0b;
             padding: 14px 18px;
@@ -118,33 +105,16 @@
             transition: border-color 0.3s;
         }
         .essay-textarea:focus { outline: none; border-color: #7c3aed; }
-        .word-count {
-            text-align: right;
-            margin-top: 8px;
-            font-size: 0.88rem;
-            color: #6b7280;
-        }
+        .word-count { text-align: right; margin-top: 8px; font-size: 0.88rem; color: #6b7280; }
         .word-count.low { color: #ef4444; }
         .word-count.good { color: #10b981; }
 
         /* Buttons */
-        .btn-row {
-            display: flex;
-            gap: 12px;
-            margin-top: 18px;
-            flex-wrap: wrap;
-        }
+        .btn-row { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
         .btn {
-            padding: 12px 28px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            padding: 12px 28px; border: none; border-radius: 10px; font-size: 1rem;
+            font-weight: 600; cursor: pointer; transition: all 0.3s;
+            display: inline-flex; align-items: center; gap: 8px;
         }
         .btn:hover { transform: translateY(-2px); }
         .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
@@ -152,8 +122,6 @@
         .btn-primary:hover:not(:disabled) { box-shadow: 0 6px 20px rgba(124,58,237,0.4); }
         .btn-green { background: linear-gradient(135deg, #10b981, #059669); color: white; }
         .btn-green:hover:not(:disabled) { box-shadow: 0 6px 20px rgba(16,185,129,0.4); }
-        .btn-orange { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
-        .btn-orange:hover:not(:disabled) { box-shadow: 0 6px 20px rgba(245,158,11,0.4); }
         .btn-gray { background: #e5e7eb; color: #374151; }
         .btn-gray:hover:not(:disabled) { background: #d1d5db; }
         .btn-print { background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; }
@@ -166,9 +134,7 @@
             padding: 30px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.15);
             margin-bottom: 24px;
-            display: none;
         }
-        .feedback-panel.active { display: block; }
         .feedback-panel h2 { font-size: 1.4rem; color: #1f2937; margin-bottom: 18px; }
         .feedback-section {
             background: #f9fafb;
@@ -177,23 +143,27 @@
             margin-bottom: 16px;
         }
         .feedback-section h3 {
-            font-size: 1.05rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 1.05rem; margin-bottom: 10px;
+            display: flex; align-items: center; gap: 8px;
         }
-        .feedback-section p, .feedback-section ul {
-            font-size: 0.95rem;
-            color: #374151;
-            line-height: 1.7;
+        .feedback-section p {
+            font-size: 0.95rem; color: #374151; line-height: 1.7;
         }
-        .feedback-section ul { padding-left: 20px; }
-        .feedback-section li { margin-bottom: 6px; }
         .grammar-section h3 { color: #dc2626; }
         .vocab-section h3 { color: #2563eb; }
         .task-section h3 { color: #059669; }
         .tips-section h3 { color: #d97706; }
+        .score-bar {
+            width: 100%; height: 10px; background: #e5e7eb;
+            border-radius: 8px; margin-top: 8px; overflow: hidden;
+        }
+        .score-fill {
+            height: 100%; border-radius: 8px;
+            transition: width 0.5s ease;
+        }
+        .score-fill.red { background: #ef4444; }
+        .score-fill.yellow { background: #f59e0b; }
+        .score-fill.green { background: #10b981; }
 
         /* Sample Answer */
         .sample-panel {
@@ -202,9 +172,7 @@
             padding: 30px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.15);
             margin-bottom: 24px;
-            display: none;
         }
-        .sample-panel.active { display: block; }
         .sample-panel h2 { font-size: 1.4rem; color: #1f2937; margin-bottom: 18px; }
         .sample-essay {
             background: #f0fdf4;
@@ -217,53 +185,33 @@
             white-space: pre-wrap;
         }
 
-        /* Loading spinner */
-        .loading {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 20px;
-            color: #7c3aed;
-            font-weight: 600;
+        /* Back button */
+        .back-link {
+            color: white; font-size: 0.95rem; cursor: pointer;
+            margin-bottom: 12px; display: inline-flex; align-items: center; gap: 6px; opacity: 0.9;
         }
-        .spinner {
-            width: 28px; height: 28px;
-            border: 3px solid #e5e7eb;
-            border-top-color: #7c3aed;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
+        .back-link:hover { opacity: 1; text-decoration: underline; }
 
         /* Print Styles */
         @media print {
-            body { background: white; padding: 0; }
+            body { background: white !important; padding: 10px !important; }
             .no-print { display: none !important; }
-            .header, .writing-panel, .feedback-panel, .sample-panel {
-                box-shadow: none;
-                break-inside: avoid;
-            }
             .container { max-width: 100%; }
+            .header, .writing-panel, .feedback-panel, .sample-panel {
+                box-shadow: none !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .topic-card { break-inside: avoid; }
+            .essay-textarea { border: 1px solid #ccc; }
         }
-
-        /* Back button */
-        .back-link {
-            color: white;
-            font-size: 0.95rem;
-            cursor: pointer;
-            margin-bottom: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            opacity: 0.9;
-        }
-        .back-link:hover { opacity: 1; text-decoration: underline; }
 
         /* Responsive */
         @media (max-width: 600px) {
             .topics-grid { grid-template-columns: repeat(2, 1fr); }
             .btn-row { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
+            .header h1 { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -272,6 +220,7 @@
 <div class="container" id="app"></div>
 
 <script>
+// ─── TOPICS ───
 const TOPICS = [
     { id: 1, emoji: '🏙️', title: 'City Life vs Village Life', prompt: 'living in a city compared to living in a village' },
     { id: 2, emoji: '📚', title: 'Homework', prompt: 'homework for students' },
@@ -283,20 +232,236 @@ const TOPICS = [
     { id: 8, emoji: '💼', title: 'Part-Time Work', prompt: 'students having part-time jobs' }
 ];
 
+// ─── SAMPLE ANSWERS (A2+ level) ───
+const SAMPLES = {
+    1: `Many people live in cities and many people live in villages. Both have good things and bad things. In this essay, I will talk about the advantages and disadvantages of city life and village life.
+
+There are many advantages of living in a city. First, there are many jobs in the city. People can find work easily. Second, cities have good hospitals and schools. Also, there are many shops, restaurants, and cinemas. Life in the city is exciting and fun.
+
+However, there are also disadvantages. City life is very expensive. Rent and food cost a lot of money. Also, cities are very noisy and crowded. The air is not clean because of cars and factories. Sometimes people feel lonely because everyone is very busy.
+
+In my opinion, I think village life is more peaceful. But cities have more opportunities. I believe both places are good, but it depends on what you need in your life.`,
+
+    2: `Homework is something all students know about. Some students like it and some students do not. In this essay, I will discuss the advantages and disadvantages of homework.
+
+There are some advantages of homework. First, homework helps students practice what they learn in class. They can remember the lessons better. Second, homework teaches students to manage their time. Also, parents can see what their children are learning at school.
+
+On the other hand, there are disadvantages too. Students are very tired after school. They need time to rest and play. Too much homework can make students stressed. Also, some students copy homework from their friends. This means they do not learn anything.
+
+In conclusion, I think homework is important but teachers should not give too much. Students need time for other activities too. A little homework every day is better than a lot of homework at the weekend.`,
+
+    3: `Social media is very popular today. Young people use apps like Instagram, Snapchat, and TikTok every day. In this essay, I will talk about the advantages and disadvantages of social media.
+
+Social media has many advantages. First, it helps people stay in touch with friends and family. You can send messages and photos easily. Second, people can learn new things from social media. For example, you can watch educational videos. Also, social media is fun and entertaining.
+
+However, there are also disadvantages. Many people spend too much time on social media. This is bad for their health and studies. Also, some people post fake news and this can be dangerous. Cyberbullying is another big problem on social media. It can make young people very sad.
+
+In my opinion, social media is useful but we should use it carefully. We should limit our time on social media and not believe everything we read online.`,
+
+    4: `Today, almost everyone has a smartphone. Young people use smartphones for many things like calling, texting, and playing games. In this essay, I will discuss the advantages and disadvantages of smartphones.
+
+Smartphones have many advantages. First, we can call and text our family and friends anytime. This is very useful in emergencies. Second, smartphones help us find information quickly. We can use Google to search for anything. Also, there are many useful apps for learning, maps, and shopping.
+
+But smartphones also have disadvantages. Many people are addicted to their phones. They check their phones every few minutes. This is bad for their eyes and sleep. Also, smartphones are expensive. If you break or lose your phone, it costs a lot to replace. Some students use phones in class and do not pay attention to the teacher.
+
+In conclusion, I think smartphones are very useful but we should not use them too much. We need to put our phones down sometimes and enjoy real life.`,
+
+    5: `Online shopping is becoming more and more popular. Many people prefer to buy things from websites instead of going to shops. In this essay, I will talk about the advantages and disadvantages of online shopping.
+
+There are many advantages of online shopping. First, it is very convenient. You can shop from your home at any time. Second, you can compare prices easily and find cheaper products. Also, online shops have more choices than regular shops. You can buy things from other countries too.
+
+However, online shopping has disadvantages. Sometimes the product looks different from the photo. You cannot touch or try the product before buying. Also, you have to wait for delivery. Sometimes delivery takes a long time. Another problem is that some websites are not safe and people can steal your money.
+
+In my opinion, online shopping is great for saving time and money. But we should be careful and only buy from trusted websites. Sometimes it is better to go to the shop and see the product first.`,
+
+    6: `Fast food is very popular around the world. Restaurants like McDonald's and KFC are everywhere. In this essay, I will discuss the advantages and disadvantages of eating fast food.
+
+Fast food has some advantages. First, it is very quick. You do not have to wait a long time for your food. This is good for busy people. Second, fast food is cheap. A meal costs less than cooking at home sometimes. Also, fast food restaurants are open late. You can eat there at any time.
+
+On the other hand, fast food has many disadvantages. It is not healthy. Fast food has a lot of fat, salt, and sugar. Eating too much fast food can make you sick. Also, fast food can make people overweight. Another problem is that fast food creates a lot of rubbish like plastic cups and bags.
+
+In conclusion, I think fast food is okay sometimes but we should not eat it every day. It is important to eat healthy food like fruits, vegetables, and home-cooked meals.`,
+
+    7: `Team sports like football, basketball, and volleyball are popular activities for young people. In this essay, I will talk about the advantages and disadvantages of playing team sports.
+
+There are many advantages of team sports. First, they are good for your health. You exercise and stay fit. Second, team sports teach you teamwork. You learn how to work with other people. Also, you can make new friends when you join a team. Playing sports is also fun and helps you feel happy.
+
+However, there are some disadvantages too. Sometimes you can get injured while playing. Broken bones and muscle injuries are common in sports. Also, team sports take a lot of time. You have to go to practice and games regularly. This can be difficult if you have a lot of homework. Some players also feel very stressed when they lose a game.
+
+In my opinion, team sports are very good for young people. The advantages are more than the disadvantages. I think every student should try at least one team sport.`,
+
+    8: `Many students work part-time after school or during holidays. In this essay, I will discuss the advantages and disadvantages of students having part-time jobs.
+
+There are several advantages of part-time work for students. First, students can earn their own money. They can buy things without asking their parents. Second, working teaches students important skills like communication and responsibility. Also, work experience looks good on a CV when they finish their studies.
+
+But there are also disadvantages. Working can take time away from studying. Some students are tired after work and cannot do their homework. Also, some jobs are boring and do not pay well. Young workers sometimes have difficult bosses. Another problem is that students might miss fun activities with friends because they have to work.
+
+In conclusion, I think a part-time job can be good for students but only if it does not affect their studies. Students should choose a job with flexible hours and not work too many hours per week.`
+};
+
+// ─── ESSAY ANALYSIS (works offline) ───
+function analyzeEssay(essay, topicPrompt) {
+    const text = essay.trim();
+    const words = text.split(/\s+/).filter(w => w.length > 0);
+    const wordCount = words.length;
+    const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+    const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+    const paragraphCount = paragraphs.length;
+    const avgSentenceLen = sentences.length > 0 ? Math.round(wordCount / sentences.length) : 0;
+
+    // Check for linking words
+    const linkingWords = ['first', 'second', 'third', 'finally', 'also', 'however', 'but', 'because', 'so', 'for example', 'in conclusion', 'in my opinion', 'on the other hand', 'moreover', 'furthermore', 'although', 'therefore'];
+    const lowerText = text.toLowerCase();
+    const foundLinking = linkingWords.filter(w => lowerText.includes(w));
+
+    // Check for advantage/disadvantage keywords
+    const advWords = ['advantage', 'advantages', 'benefit', 'benefits', 'good thing', 'positive', 'useful', 'helpful'];
+    const disWords = ['disadvantage', 'disadvantages', 'problem', 'problems', 'bad thing', 'negative', 'dangerous', 'harmful'];
+    const foundAdv = advWords.filter(w => lowerText.includes(w));
+    const foundDis = disWords.filter(w => lowerText.includes(w));
+
+    // Check for opinion words
+    const opinionWords = ['i think', 'i believe', 'in my opinion', 'in conclusion', 'to sum up', 'overall'];
+    const foundOpinion = opinionWords.filter(w => lowerText.includes(w));
+
+    // Common A2 grammar issues to check
+    const grammarIssues = [];
+    if (/\bi\b/.test(text) && /\bi\b/.test(text.replace(/\bI\b/g, ''))) grammarIssues.push('Remember: "I" should always be a capital letter.');
+    if (/\s,/.test(text)) grammarIssues.push('There should be no space before a comma.');
+    if (/[a-z]\.[A-Z]/.test(text.replace(/\.\.\./g, ''))) grammarIssues.push('Add a space after full stops.');
+    if (text.length > 0 && text[0] !== text[0].toUpperCase()) grammarIssues.push('Start your essay with a capital letter.');
+    if (sentences.length > 0 && !/[.!?]\s*$/.test(text)) grammarIssues.push('End your last sentence with a full stop, question mark, or exclamation mark.');
+    const repeatedWords = findRepeatedWords(words);
+    if (repeatedWords.length > 0) grammarIssues.push('Try not to repeat these words too much: ' + repeatedWords.join(', ') + '.');
+
+    // ─── SCORES ───
+    // Grammar score
+    let grammarScore = 8;
+    grammarScore -= Math.min(3, grammarIssues.length);
+    if (avgSentenceLen > 20) grammarScore -= 1;
+    grammarScore = Math.max(2, Math.min(10, grammarScore));
+
+    // Vocabulary score
+    let vocabScore = 5;
+    if (foundLinking.length >= 5) vocabScore = 9;
+    else if (foundLinking.length >= 3) vocabScore = 7;
+    else if (foundLinking.length >= 1) vocabScore = 6;
+    const uniqueWords = new Set(words.map(w => w.toLowerCase().replace(/[^a-z]/g, '')));
+    const vocabRichness = uniqueWords.size / Math.max(1, wordCount);
+    if (vocabRichness > 0.6) vocabScore = Math.min(10, vocabScore + 1);
+    vocabScore = Math.max(2, Math.min(10, vocabScore));
+
+    // Task achievement score
+    let taskScore = 4;
+    if (paragraphCount >= 4) taskScore += 2;
+    else if (paragraphCount >= 3) taskScore += 1;
+    if (foundAdv.length > 0) taskScore += 1;
+    if (foundDis.length > 0) taskScore += 1;
+    if (foundOpinion.length > 0) taskScore += 1;
+    if (wordCount >= 120 && wordCount <= 220) taskScore += 1;
+    else if (wordCount >= 80) taskScore += 0.5;
+    taskScore = Math.max(2, Math.min(10, Math.round(taskScore)));
+
+    // ─── FEEDBACK TEXT ───
+    let grammarText = '';
+    if (grammarIssues.length === 0) {
+        grammarText = 'Good job! Your grammar looks good. Your sentences are clear and easy to understand.';
+        if (avgSentenceLen > 18) grammarText += ' Try to make some sentences shorter for easier reading.';
+    } else {
+        grammarText = 'Here are some things to check:\n\n• ' + grammarIssues.join('\n• ');
+    }
+    grammarText += `\n\nYour average sentence length is ${avgSentenceLen} words. For A2+ level, 8-15 words per sentence is ideal.`;
+
+    let vocabText = '';
+    if (foundLinking.length >= 3) {
+        vocabText = `Great work! You used ${foundLinking.length} linking words: ${foundLinking.join(', ')}. This makes your essay flow well.`;
+    } else if (foundLinking.length >= 1) {
+        vocabText = `You used some linking words (${foundLinking.join(', ')}), but try to add more. Use words like: first, second, however, also, for example, in conclusion.`;
+    } else {
+        vocabText = 'Try to use more linking words to connect your ideas. Good words for essays: first, second, also, however, because, for example, in conclusion.';
+    }
+    vocabText += `\n\nYou used ${uniqueWords.size} different words out of ${wordCount} total. `;
+    if (vocabRichness > 0.6) vocabText += 'Good vocabulary variety!';
+    else vocabText += 'Try to use more different words instead of repeating the same ones.';
+
+    let taskText = '';
+    if (paragraphCount >= 4) {
+        taskText = `Excellent! You have ${paragraphCount} paragraphs. `;
+    } else if (paragraphCount >= 2) {
+        taskText = `You have ${paragraphCount} paragraph(s). Try to write 4 paragraphs: introduction, advantages, disadvantages, and conclusion. Press Enter twice to start a new paragraph. `;
+    } else {
+        taskText = 'Your essay looks like one paragraph. Please divide it into 4 paragraphs: introduction, advantages, disadvantages, and conclusion. Press Enter twice between paragraphs. ';
+    }
+    if (foundAdv.length > 0 && foundDis.length > 0) {
+        taskText += 'You talked about both advantages and disadvantages. Well done! ';
+    } else if (foundAdv.length > 0) {
+        taskText += 'You mentioned advantages but try to add some disadvantages too. ';
+    } else if (foundDis.length > 0) {
+        taskText += 'You mentioned disadvantages but try to add some advantages too. ';
+    } else {
+        taskText += 'Remember to clearly use the words "advantage" and "disadvantage" in your essay. ';
+    }
+    if (foundOpinion.length > 0) {
+        taskText += 'Good — you included your opinion!';
+    } else {
+        taskText += 'In your conclusion, give your opinion using phrases like "I think..." or "In my opinion..."';
+    }
+
+    // Word count feedback
+    let wordFeedback = '';
+    if (wordCount < 80) wordFeedback = `You wrote ${wordCount} words. Try to write at least 150 words. Add more details and examples.`;
+    else if (wordCount < 120) wordFeedback = `You wrote ${wordCount} words. Good start! Try to add more examples to reach 150-200 words.`;
+    else if (wordCount <= 220) wordFeedback = `You wrote ${wordCount} words. Great length! This is perfect for this essay.`;
+    else wordFeedback = `You wrote ${wordCount} words. This is a bit long. Try to keep your essay between 150-200 words. Remove any repeated ideas.`;
+
+    // Tips
+    let tips = [];
+    if (paragraphCount < 4) tips.push('Divide your essay into 4 clear paragraphs (press Enter twice between them).');
+    if (foundLinking.length < 3) tips.push('Use more linking words: first, second, however, also, for example, in conclusion.');
+    if (foundOpinion.length === 0) tips.push('Add your opinion in the conclusion: "I think...", "In my opinion..."');
+    if (wordCount < 120) tips.push('Write more! Add examples and reasons to support your ideas.');
+    if (avgSentenceLen > 18) tips.push('Make your sentences shorter. Aim for 8-15 words per sentence.');
+    if (tips.length === 0) tips.push('Excellent work! Try writing about another topic to practice more.');
+    if (tips.length < 2) tips.push('Read the sample answer to learn new words and phrases you can use.');
+    if (tips.length < 3) tips.push('Keep practicing! Writing gets easier every time you do it. 💪');
+
+    return {
+        grammar: { score: grammarScore, text: grammarText },
+        vocabulary: { score: vocabScore, text: vocabText },
+        task: { score: taskScore, text: taskText },
+        wordFeedback: wordFeedback,
+        tips: tips,
+        wordCount: wordCount,
+        paragraphCount: paragraphCount
+    };
+}
+
+function findRepeatedWords(words) {
+    const ignore = new Set(['the','a','an','is','are','was','were','be','been','am','i','you','he','she','it','we','they','my','your','his','her','its','our','their','and','but','or','so','if','in','on','at','to','for','of','with','from','by','that','this','these','those','not','no','do','does','did','can','will','have','has','had','very','also','too']);
+    const freq = {};
+    words.forEach(w => {
+        const clean = w.toLowerCase().replace(/[^a-z]/g, '');
+        if (clean.length > 2 && !ignore.has(clean)) {
+            freq[clean] = (freq[clean] || 0) + 1;
+        }
+    });
+    return Object.entries(freq).filter(([w, c]) => c >= 5).map(([w]) => w).slice(0, 3);
+}
+
+// ─── STATE ───
 let state = {
-    screen: 'topics', // topics | writing | feedback | sample
+    screen: 'topics',
     selectedTopic: null,
     essay: '',
     feedback: null,
-    sample: null,
-    loadingFeedback: false,
-    loadingSample: false
+    showSample: false
 };
 
 function countWords(text) {
     return text.trim() ? text.trim().split(/\s+/).length : 0;
 }
 
+// ─── RENDER ───
 function render() {
     const app = document.getElementById('app');
     if (state.screen === 'topics') renderTopics(app);
@@ -310,6 +475,7 @@ function renderTopics(app) {
             <p>Learn to write advantage & disadvantage essays</p>
             <span class="badge">A2+ Level</span>
         </div>
+        <p style="color:white;text-align:center;margin-bottom:18px;font-size:1.05rem;">Choose a topic to start writing:</p>
         <div class="topics-grid">
             ${TOPICS.map(t => `
                 <div class="topic-card" onclick="selectTopic(${t.id})">
@@ -325,7 +491,7 @@ function selectTopic(id) {
     state.selectedTopic = TOPICS.find(t => t.id === id);
     state.essay = '';
     state.feedback = null;
-    state.sample = null;
+    state.showSample = false;
     state.screen = 'writing';
     render();
 }
@@ -333,7 +499,7 @@ function selectTopic(id) {
 function goBack() {
     state.screen = 'topics';
     state.feedback = null;
-    state.sample = null;
+    state.showSample = false;
     render();
 }
 
@@ -342,7 +508,7 @@ function renderWriting(app) {
     const wc = countWords(state.essay);
     const wcClass = wc < 100 ? 'low' : 'good';
 
-    app.innerHTML = `
+    let html = `
         <div class="back-link no-print" onclick="goBack()">← Back to Topics</div>
         <div class="header">
             <h1>✍️ Essay Builder</h1>
@@ -350,7 +516,7 @@ function renderWriting(app) {
             <span class="badge">A2+ Level</span>
         </div>
 
-        <div class="writing-panel active">
+        <div class="writing-panel">
             <h2>${t.emoji} Write Your Essay</h2>
             <div class="topic-label">Topic: ${t.title}</div>
             <div class="instructions">
@@ -358,209 +524,133 @@ function renderWriting(app) {
                 Write an essay about the <strong>advantages and disadvantages of ${t.prompt}</strong>.<br><br>
                 Your essay should have <strong>4 paragraphs</strong>:<br>
                 1️⃣ <strong>Introduction</strong> – Introduce the topic<br>
-                2️⃣ <strong>Advantages</strong> – Give 2-3 advantages with reasons<br>
-                3️⃣ <strong>Disadvantages</strong> – Give 2-3 disadvantages with reasons<br>
+                2️⃣ <strong>Advantages</strong> – Give 2–3 advantages with reasons<br>
+                3️⃣ <strong>Disadvantages</strong> – Give 2–3 disadvantages with reasons<br>
                 4️⃣ <strong>Conclusion</strong> – Give your opinion<br><br>
                 ✅ Try to write <strong>150–200 words</strong>.
             </div>
-            <textarea class="essay-textarea" id="essayInput" placeholder="Write your essay here..."
-                oninput="updateEssay(this.value)">${state.essay}</textarea>
-            <div class="word-count ${wcClass}">Words: ${wc} / 200</div>
+            <textarea class="essay-textarea" id="essayInput" placeholder="Write your essay here...&#10;&#10;Press Enter twice to start a new paragraph..."
+                oninput="updateEssay(this.value)">${escapeHtml(state.essay)}</textarea>
+            <div class="word-count ${wcClass}" id="wordCount">Words: ${wc} / 200</div>
             <div class="btn-row no-print">
-                <button class="btn btn-primary" onclick="getFeedback()" ${wc < 30 ? 'disabled' : ''}>
-                    📝 Get AI Feedback
+                <button class="btn btn-primary" onclick="getFeedback()" id="btnFeedback" ${wc < 30 ? 'disabled' : ''}>
+                    📝 Get Feedback
                 </button>
-                <button class="btn btn-green" onclick="getSample()" ${wc < 10 ? 'disabled' : ''}>
-                    📄 Show Sample Answer
+                <button class="btn btn-green" onclick="toggleSample()" id="btnSample">
+                    📄 ${state.showSample ? 'Hide' : 'Show'} Sample Answer
                 </button>
                 <button class="btn btn-gray" onclick="clearEssay()">🗑️ Clear</button>
             </div>
-        </div>
+        </div>`;
 
-        <div id="feedbackArea"></div>
-        <div id="sampleArea"></div>
-    `;
+    // Feedback
+    if (state.feedback) {
+        const f = state.feedback;
+        html += `
+        <div class="feedback-panel" id="feedbackPanel">
+            <h2>📝 Your Feedback</h2>
+            <p style="color:#6b7280;margin-bottom:16px;">${f.wordFeedback}</p>
 
-    if (state.loadingFeedback) {
-        document.getElementById('feedbackArea').innerHTML = `
-            <div class="feedback-panel active"><div class="loading"><div class="spinner"></div> Analyzing your essay...</div></div>`;
-    } else if (state.feedback) {
-        renderFeedback();
+            <div class="feedback-section grammar-section">
+                <h3>📖 Grammar — ${f.grammar.score}/10</h3>
+                <div class="score-bar"><div class="score-fill ${f.grammar.score >= 7 ? 'green' : f.grammar.score >= 5 ? 'yellow' : 'red'}" style="width:${f.grammar.score * 10}%"></div></div>
+                <p style="margin-top:10px;white-space:pre-line;">${escapeHtml(f.grammar.text)}</p>
+            </div>
+
+            <div class="feedback-section vocab-section">
+                <h3>📘 Vocabulary — ${f.vocabulary.score}/10</h3>
+                <div class="score-bar"><div class="score-fill ${f.vocabulary.score >= 7 ? 'green' : f.vocabulary.score >= 5 ? 'yellow' : 'red'}" style="width:${f.vocabulary.score * 10}%"></div></div>
+                <p style="margin-top:10px;white-space:pre-line;">${escapeHtml(f.vocabulary.text)}</p>
+            </div>
+
+            <div class="feedback-section task-section">
+                <h3>✅ Task Achievement — ${f.task.score}/10</h3>
+                <div class="score-bar"><div class="score-fill ${f.task.score >= 7 ? 'green' : f.task.score >= 5 ? 'yellow' : 'red'}" style="width:${f.task.score * 10}%"></div></div>
+                <p style="margin-top:10px;white-space:pre-line;">${escapeHtml(f.task.text)}</p>
+            </div>
+
+            <div class="feedback-section tips-section">
+                <h3>💡 Tips to Improve</h3>
+                <p>${f.tips.map(tip => '• ' + escapeHtml(tip)).join('<br>')}</p>
+            </div>
+
+            <div class="btn-row no-print">
+                <button class="btn btn-print" onclick="printPage()">🖨️ Print My Essay & Feedback</button>
+            </div>
+        </div>`;
     }
 
-    if (state.loadingSample) {
-        document.getElementById('sampleArea').innerHTML = `
-            <div class="sample-panel active"><div class="loading"><div class="spinner"></div> Generating sample answer...</div></div>`;
-    } else if (state.sample) {
-        renderSample();
+    // Sample answer
+    if (state.showSample && SAMPLES[t.id]) {
+        html += `
+        <div class="sample-panel" id="samplePanel">
+            <h2>📄 Sample Answer — ${t.title}</h2>
+            <div class="sample-essay">${escapeHtml(SAMPLES[t.id])}</div>
+            <div class="btn-row no-print">
+                <button class="btn btn-print" onclick="printPage()">🖨️ Print Sample Answer</button>
+            </div>
+        </div>`;
     }
+
+    app.innerHTML = html;
+}
+
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
 }
 
 function updateEssay(val) {
     state.essay = val;
     const wc = countWords(val);
-    const wcEl = document.querySelector('.word-count');
+    const wcEl = document.getElementById('wordCount');
     if (wcEl) {
         wcEl.textContent = `Words: ${wc} / 200`;
         wcEl.className = 'word-count ' + (wc < 100 ? 'low' : 'good');
     }
-    // Enable/disable buttons
-    const btns = document.querySelectorAll('.btn-primary, .btn-green');
-    if (btns[0]) btns[0].disabled = wc < 30;
-    if (btns[1]) btns[1].disabled = wc < 10;
+    const btn = document.getElementById('btnFeedback');
+    if (btn) btn.disabled = wc < 30;
 }
 
 function clearEssay() {
     state.essay = '';
     state.feedback = null;
-    state.sample = null;
+    state.showSample = false;
     render();
 }
 
-async function getFeedback() {
-    state.loadingFeedback = true;
-    state.feedback = null;
+function getFeedback() {
+    const wc = countWords(state.essay);
+    if (wc < 30) return;
+    state.feedback = analyzeEssay(state.essay, state.selectedTopic.prompt);
     render();
+    // Scroll to feedback
+    setTimeout(() => {
+        const el = document.getElementById('feedbackPanel');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+}
 
-    const t = state.selectedTopic;
-    try {
-        const response = await fetch("https://api.anthropic.com/v1/messages", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                model: "claude-sonnet-4-20250514",
-                max_tokens: 1000,
-                messages: [{
-                    role: "user",
-                    content: `You are an English teacher for A2+ level ESL students (Arabic speakers aged 17-24). Analyze this advantage/disadvantage essay about "${t.title}" and provide feedback.
-
-ESSAY:
-"""
-${state.essay}
-"""
-
-Respond ONLY in this JSON format (no markdown, no backticks):
-{
-    "grammar": {
-        "score": 0-10,
-        "comments": "Brief feedback on grammar errors. Use simple English. Give 2-3 specific corrections."
-    },
-    "vocabulary": {
-        "score": 0-10,
-        "comments": "Brief feedback on word choice. Suggest 2-3 better words they could use. Keep suggestions at A2-B1 level."
-    },
-    "taskAchievement": {
-        "score": 0-10,
-        "comments": "Did they include introduction, advantages, disadvantages, and conclusion? Brief feedback."
-    },
-    "tips": "Give 2-3 simple, encouraging tips to improve. Use simple English suitable for A2+ learners."
-}`
-                }]
-            })
-        });
-        const data = await response.json();
-        const text = data.content.map(i => i.text || '').join('');
-        const clean = text.replace(/```json|```/g, '').trim();
-        state.feedback = JSON.parse(clean);
-    } catch (err) {
-        state.feedback = {
-            grammar: { score: '-', comments: 'Could not analyze. Please check your internet connection and try again.' },
-            vocabulary: { score: '-', comments: '' },
-            taskAchievement: { score: '-', comments: '' },
-            tips: 'Try again in a moment.'
-        };
+function toggleSample() {
+    state.showSample = !state.showSample;
+    render();
+    if (state.showSample) {
+        setTimeout(() => {
+            const el = document.getElementById('samplePanel');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
     }
-    state.loadingFeedback = false;
-    render();
 }
 
-async function getSample() {
-    state.loadingSample = true;
-    state.sample = null;
-    render();
-
-    const t = state.selectedTopic;
-    try {
-        const response = await fetch("https://api.anthropic.com/v1/messages", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                model: "claude-sonnet-4-20250514",
-                max_tokens: 1000,
-                messages: [{
-                    role: "user",
-                    content: `You are an English teacher writing a MODEL ANSWER for A2+ level ESL students (Arabic speakers aged 17-24).
-
-Write a sample advantage/disadvantage essay about "${t.title}" (${t.prompt}).
-
-VERY IMPORTANT LANGUAGE RULES - Follow ALL of these:
-- Use ONLY simple vocabulary (A2-B1 level)
-- Use ONLY basic tenses: present simple, past simple, present continuous, future with "will" or "going to"
-- Keep sentences SHORT (max 12-15 words per sentence)
-- Use ONLY elementary connecting words: and, but, because, so, also, however, for example, first, second, finally
-- Do NOT use complex grammar (no passive voice, no conditionals, no relative clauses)
-- Write 150-180 words total
-- Use 4 clear paragraphs: Introduction, Advantages, Disadvantages, Conclusion
-
-Write ONLY the essay text with paragraph breaks. No titles, no labels, no extra formatting.`
-                }]
-            })
-        });
-        const data = await response.json();
-        state.sample = data.content.map(i => i.text || '').join('');
-    } catch (err) {
-        state.sample = 'Could not generate sample answer. Please check your internet connection and try again.';
-    }
-    state.loadingSample = false;
-    render();
-}
-
-function renderFeedback() {
-    const f = state.feedback;
-    const area = document.getElementById('feedbackArea');
-    if (!area) return;
-    area.innerHTML = `
-        <div class="feedback-panel active">
-            <h2>📝 AI Feedback</h2>
-            <div class="feedback-section grammar-section">
-                <h3>📖 Grammar (${f.grammar.score}/10)</h3>
-                <p>${f.grammar.comments}</p>
-            </div>
-            <div class="feedback-section vocab-section">
-                <h3>📘 Vocabulary (${f.vocabulary.score}/10)</h3>
-                <p>${f.vocabulary.comments}</p>
-            </div>
-            <div class="feedback-section task-section">
-                <h3>✅ Task Achievement (${f.taskAchievement.score}/10)</h3>
-                <p>${f.taskAchievement.comments}</p>
-            </div>
-            <div class="feedback-section tips-section">
-                <h3>💡 Tips to Improve</h3>
-                <p>${f.tips}</p>
-            </div>
-            <div class="btn-row no-print">
-                <button class="btn btn-print" onclick="window.print()">🖨️ Print Feedback</button>
-            </div>
-        </div>
-    `;
-}
-
-function renderSample() {
-    const area = document.getElementById('sampleArea');
-    if (!area) return;
-    area.innerHTML = `
-        <div class="sample-panel active">
-            <h2>📄 Sample Answer — ${state.selectedTopic.title}</h2>
-            <div class="sample-essay">${state.sample}</div>
-            <div class="btn-row no-print">
-                <button class="btn btn-print" onclick="window.print()">🖨️ Print Sample Answer</button>
-            </div>
-        </div>
-    `;
+function printPage() {
+    window.print();
 }
 
 // Initial render
 render();
 </script>
+</body>
+</html>
 </body>
 </html>
